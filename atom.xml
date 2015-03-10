@@ -1,23 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[Hexo]]></title>
-  
+  <title><![CDATA[Wrang's blog]]></title>
+  <subtitle><![CDATA[懒鬼一个]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2015-03-10T06:24:10.996Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://wrang.cn/"/>
+  <updated>2015-03-10T07:52:49.272Z</updated>
+  <id>http://wrang.cn/</id>
   
   <author>
-    <name><![CDATA[John Doe]]></name>
-    
+    <name><![CDATA[Wrang]]></name>
+    <email><![CDATA[664743327@qq.com]]></email>
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[新文章]]></title>
+    <link href="http://wrang.cn/2015/03/10/my-new-post/"/>
+    <id>http://wrang.cn/2015/03/10/my-new-post/</id>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Hello World]]></title>
-    <link href="http://yoursite.com/2015/03/10/hello-world/"/>
-    <id>http://yoursite.com/2015/03/10/hello-world/</id>
+    <link href="http://wrang.cn/2015/03/10/hello-world/"/>
+    <id>http://wrang.cn/2015/03/10/hello-world/</id>
     
   </entry>
   
