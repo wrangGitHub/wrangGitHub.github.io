@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jqeruy UI 拖拽练习--01默认配置</title>
+<!--导入jquery插件-->
+<script type="text/javascript" src="jquery-2.1.4.js"></script>
+<!--导入jqueryUI插件-->
+<script type="text/javascript" src="jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="jquery-ui.css"/>
+
+<!--自写脚本-->
+<script type="text/javascript" language="javascript">
+   //在页面加载完之后加载jquery
+   $(function() {
+      //拖拽函数
+      $('#draggable').draggable();
+});
+</script>
+<!--自写脚本-->
+<style type="text/css">
+  #draggable
+  {
+      width:150px;
+      height:150px;
+  }
+</style>
+</head>
+<body>
+<div id="draggable" class="ui-widget-content">
+   <p>您可以四处随便拖拽我！</p>
+</div>
+</body>
+</html>
