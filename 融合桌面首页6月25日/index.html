@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"  alt=""/>
+<title>融合桌面首页</title>
+<link rel="stylesheet" type="text/css" href="css/carousel.css" media="screen" alt=""/>
+<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" alt=""/>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.carousel.min.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+
+<script type="text/javascript">
+
+	jQuery(document).ready(function($){
+		$('#carousel').carousel({width: 1570, 
+								 height: 450, 
+								 itemWidth:120, 
+								 horizontalRadius:620, //半径
+								 verticalRadius:150, 
+								 //resize:true,
+								 resize:false, 
+								 mouseScroll:false, 
+								 mouseDrag:true, 
+								 scaleRatio:0.4, 
+								 scrollbar:true, 
+								 //tooltip:true, 
+								 mouseWheel:true, 
+								 mouseWheelReverse:true});
+	});
+	
+</script>
+<script type="text/javascript" src="js/action.js"></script>
+		<style type="text/css">
+			/* *{ margin:0; padding:0;}
+			div{ width:500px; height:500px; margin:100px 0 auto;}*/
+			#content{margin-left: 180px;} 
+			ul,ol{ list-style:none; list-style-type:none;}
+			a,a:visited,a:hover{ display:block; text-decoration:none; color:#ccc; text-indent:-9999px; outline: 0 none; width:128px; height:116px; z-index:2; overflow:hidden;  position:relative;}
+			li{ float:left; width:128px; height:150px; margin-left:34px; position:relative;}	
+			#nav-shadow li.chang-one a{ background:url(img/txl.png);}
+			#nav-shadow li.chang-two a{background:url(img/wsbp.png);}
+			#nav-shadow li.chang-three a{background:url(img/sphy.png);}
+			#nav-shadow li.chang-four a{background:url(img/kqgl.png) ;}
+			#nav-shadow li.chang-five a{background:url(img/gwcx.png);}
+			#nav-shadow li.chang-six a{background:url(img/gzrl.png);}
+			#nav-shadow li.chang-Seven a{background:url(img/yjkh.png);}
+			#nav-shadow li.chang-eight a{background:url(img/gwqc.png);}
+			#nav-shadow li.chang-nine a{background:url(img/wssw.png);}
+			#nav-shadow li img.shadow{margin:0 auto; position:absolute; bottom:0px; left:0px; z-index:1;}
+		</style>
+</head>
+
+<body>
+
+	<div id="wide-wrapper">
+		
+		<div id="middle">
+			<div id="carouselBack">
+				<ul id="carousel">
+					<li>
+						<img src="img/a.png" alt=""/>
+						
+					</li>
+					<li>
+						<img src="img/2b.png" alt=""/>
+					</li>
+					<li>
+						<img src="img/3c.png" alt=""/>                   
+					</li>
+					<li>
+						<img src="img/4d.png" alt=""/>
+						
+					</li>
+					<li>
+						<img src="img/5e.png" alt=""/>
+					</li>
+					<li>
+						<img src="img/6f.png" alt=""/>
+					</li>
+					<li>
+						<img src="img/7f.png" alt=""/>
+						
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div id="bottom">
+			<img id="bottom-img" src="img/tmbl.png">
+				 <div id="content">
+				 	<ul id="nav-shadow">
+				 		<li class="chang-one"><a href="#" title="reflaction_one">click me</a></li>
+						<li class="chang-two"><a href="#" title="reflaction_two">click me</a></li>
+						<li class="chang-three"><a href="#" title="reflaction_three">click me</a></li>
+						<li class="chang-four"><a href="#" title="reflaction_four">click me</a></li>
+						<li class="chang-five"><a href="#" title="reflaction_five">click me</a></li>
+						<li class="chang-six"><a href="#" title="reflaction_six">click me</a></li>
+						<li class="chang-Seven"><a href="#" title="reflaction_Seven">click me</a></li>
+						<li class="chang-eight"><a href="#" title="reflaction_eight">click me</a></li>	
+						<li class="chang-nine"><a href="#" title="reflaction_nine">click me</a></li>
+				 	</ul>
+				 </div>
+		</div>
+    </div>
+</body>
+
+</html>
