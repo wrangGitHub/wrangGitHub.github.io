@@ -12,8 +12,8 @@ $(function(){
 	$("#nav-shadow li").hover(function(){
 	//define e for tihs
 		var $e = this;
-		$($e).find("a").stop().animate({marginTop:'-14px'},250,function(){
-			$($e).find("a").animate({marginTop:'-10px'},250);
+		$($e).find("a").stop().animate({marginTop:'-55px'},250,function(){
+			$($e).find("a").animate({marginTop:'-45px'},250);
 	    	
 		});
 		$($e).find("img.shadow").stop().animate({width:"80%",opacity:"0.3",marginLeft:"8px"},250);				
