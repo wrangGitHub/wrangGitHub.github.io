@@ -9,6 +9,13 @@
 <script type="text/javascript" src="js/jquery.carousel.min.js"></script>
 <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
 
+<script type="text/javascript" src="js/jquery.placeholder.js"></script>
+
+<!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/inputText.js"></script>
+<![endif]-->
+
 <script type="text/javascript">
 
 	jQuery(document).ready(function($){
@@ -26,8 +33,49 @@
 								 //tooltip:true, 
 								 mouseWheel:true, 
 								 mouseWheelReverse:true});
+		/*$('#userName').bind({
+			onfocus : function (){
+				if (this.value=='请输入用户名') {
+					this.value='';
+				};
+			}
+			onblur : function() {
+				if (this.value=='') {
+					this.value='请输入用户名';
+				};
+			}
+		});
+
+		$('#password').bind({
+			onfocus : function (){
+				if (this.value=='请输入密码') {
+					this.value='';
+				};
+			}
+			onblur : function() {
+				if (this.value=='') {
+					this.value='请输入用户名';
+				};
+			}
+		});*/
+		$('#userName').placeholder({customClass:'my-placeholder'});
+		$('#password').placeholder({customClass:'my-placeholder'});
+
 	});
-	
+	function checkUser(){
+	    var userName = document.getElementById("userName").value;
+	    var password = document.getElementById("password").value;
+	    if(userName == ""  ){
+			alert("用户名不能为空");
+			return false;
+		}
+		if(password == ""  ){
+		    alert("密码不能为空");
+		    return false;
+		    }else{
+		   	return true;
+		   	}
+		}
 </script>
 <script type="text/javascript" src="js/action.js"></script>
 		<style type="text/css">
@@ -48,11 +96,118 @@
 			#nav-shadow li.chang-nine a{background:url(img/wssw.png);}
 			#nav-shadow li img.shadow{margin:0 auto; position:absolute; bottom:0px; left:0px; z-index:1;}
 		</style>
+		<style type="text/css">
+			#top{
+				position: relative;
+				display:inline;
+				height: 46px;
+				line-height: 46px;
+				width: 1920px;
+				font-size: 18px;
+				font-family: "微软雅黑";
+				color: white;
+				text-align: center;
+
+			}
+			.my-placeholder { color: #aaa; }
+
+			#top form > * {
+				border: 0;
+				margin:0;
+				padding: 0;
+				vertical-align:middle;/*所有元素垂直居中*/
+			}
+			#labelUserName{
+				width: 64px;
+			}
+			#userName {
+				
+			}
+			#userName,#password{
+				width:157px;
+			}
+			#labelpwd{
+				width: 46px;
+			}
+			#labelRememberPasswords{
+				width: 72px;
+			}
+
+			#rememberPasswords{
+				zoom: 1.2;
+
+			}
+			#login {
+				display:inline;
+				position: absolute;
+				left: 46px;
+				width: 750px;
+			}
+
+			#submit {
+				margin:0;
+				padding: 0;
+				border: none;
+				background-color: red;
+				width: 91px;
+				height: 36px;
+				font-size: 18px;
+				font-family: "微软雅黑";
+				color:white;
+			}
+			#userName ,#password ,#rememberPasswords {
+				height: 28px;
+				line-height:28px;
+				
+			}
+
+			
+			#top-right{
+				float:right;
+				display:inline;
+				margin-right:175px;
+				
+				line-height:46px;
+				height: 46px;
+			}
+			#top-right *{
+				vertical-align:middle;
+			}
+			#top-right img{
+				top:10px;
+			}
+			#todoLable{
+				color: red;
+				font-weight:bold;
+			}
+
+			#top :after{
+				clear: both;
+			}
+		</style>
 </head>
 
 <body>
 
 	<div id="wide-wrapper">
+		<div id="top">
+			<form  id="login" action="#" method="post" onsubmit="return checkUser();" >
+				<label for="userName" id="labelUserName">用户名 :</label>
+				<input type="text" id="userName" tabindex="1" required="true" placeholder="请输入用户名"/>
+				<label for="password" id="labelpwd">密码 :</label>
+				<input type="password" id="password" tabindex="2" required="true" placeholder="请输入密码" />
+				<input type="checkbox" id="rememberPasswords" tabindex="3" />
+				<label for="rememberPasswords" id="labelRememberPasswords">记住密码</label>
+				<input type="submit" id="submit" value="登录" tabindex="4" />
+			</form>
+			<div id="top-right">
+				<img src="img/gr_dd.png" id="personal_setting">
+				<label for="personal_setting" id="perLabel">个人设置</label>
+				<img src="img/ff_j.png" id="todoList">
+				<label for="todoList" id="todoLable">(52)</label>
+			</div>
+
+		</div>
 		
 		<div id="middle">
 			<div id="carouselBack">
