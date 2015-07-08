@@ -1,0 +1,537 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"  alt=""/>
+<!--自适应网页宽度-->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>融合桌面首页</title>
+
+<link rel="stylesheet" type="text/css" href="css/carousel.css" media="screen" alt=""/>
+<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" alt=""/>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.carousel.min.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+
+<script type="text/javascript" src="js/placeholder.js"></script>
+
+<!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/inputText.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+
+		jQuery(document).ready(function($){
+		$('#carousel').carousel({width: 1570, 
+								 height: 450, 
+								 itemWidth:120, 
+								 horizontalRadius:620, //半径
+								 verticalRadius:150, 
+								 //resize:true,
+								 resize:false, 
+								 mouseScroll:false, 
+								 mouseDrag:true, 
+								 scaleRatio:0.4, 
+								 scrollbar:true, 
+								 //tooltip:true, 
+								 mouseWheel:true, 
+								 mouseWheelReverse:true,
+								 speed: 50000});
+
+		$('input[placeholder]').each(function(){$(this).is('input')?$(this).iePlaceholder():$(this).iePlaceholder({onInput: false});});
+		//弹出登录框begin
+
+	    $("#login_button").click(function () {
+	        $("#bg").css({
+	            display: "block", height: $(document).height()
+	        });
+	        var $box = $('.box');
+	        $box.css({
+	            //设置弹出层距离左边的位置
+	            left: ($("body").width() - $box.width()) / 2 - 20 + "px",
+	            //设置弹出层距离上面的位置
+	            top: ($(window).height() - $box.height()) / 2 + $(window).scrollTop() + "px",
+	            display: "block"
+	        });
+	    });
+	    //点击关闭按钮的时候，遮罩层关闭
+	    $("#bg,#_close").click(function () {
+	        $("#bg,.box").css("display", "none");
+	    });
+
+		//弹出登录框end
+		$('#password').bind({
+			onfocus : function (){
+				if (this.value=='请输入密码') {
+					this.value='';
+				};
+			},
+			onblur : function() {
+				if (this.value=='') {
+					this.value='请输入密码';
+				};
+			}
+		});
+		$('#userName').bind({
+			onfocus : function (){
+				if (this.value=='请输入用户名') {
+					this.value='';
+				};
+			},
+			onblur : function() {
+				if (this.value=='') {
+					this.value='请输入用户名';
+				};
+			}
+		});
+		var name="";
+		$("#_login").click(
+			function () {
+				name=$('#_userName').val();
+				if (!name=="") {
+					$('#login').html("");
+					$('#login').html("欢迎"+name+"来到“融合桌面”");
+					//$('#login_button').toggle();
+					//$('#logout_button').toggle();
+				}
+			}
+		);
+		
+		/*$('#logout_button').click(
+			function () {
+				$('#login').html(" 欢迎您来到“融合桌面”，请</label>&nbsp;&nbsp;<input type='button' id='login_button' value='登录' />");
+			}
+		);*/
+		$("#todoList,#todoLable").click(function(){
+			$("#side_bar").slideToggle("slow");
+		});
+		$("#todo").click(function() {
+			$("#todo_li").slideToggle("slow");
+		});
+		$("#meeting").click(function() {
+			$("#meeting_li").slideToggle("slow");
+		});
+		$("#exercise").click(function() {
+			$("#exercise_li").slideToggle("slow");
+		});
+		$("#schedule").click(function() {
+			$("#schedule_li").slideToggle("slow");
+		});
+
+
+	});
+	function checkUser(){
+	    var userName = document.getElementById("userName").value;
+	    var password = document.getElementById("password").value;
+	    if(userName == "" || userName == "请输入用户名"){
+			alert("用户名不能为空");
+			return false;
+		}
+		if(password == ""  ){
+		    alert("密码不能为空");
+		    return false;
+		    }else{
+		   	return true;
+		   	}
+		}
+</script>
+<script type="text/javascript" src="js/action.js"></script>
+		<style type="text/css">
+			/* *{ margin:0; padding:0;}
+			div{ width:500px; height:500px; margin:100px 0 auto;}*/
+			#content{margin-left: 180px;} 
+			ul,ol{ list-style:none; list-style-type:none;}
+			a,a:visited,a:hover{ display:block; text-decoration:none; color:#ccc; text-indent:-9999px; outline: 0 none; width:128px; height:116px; z-index:100; overflow:hidden;  position:relative;}
+			li{ float:left; width:128px; height:150px; margin-left:34px; position:relative;}	
+			#nav-shadow li.chang-one a{ background:url(img/txl.png);}
+			#nav-shadow li.chang-two a{background:url(img/wsbp.png);}
+			#nav-shadow li.chang-three a{background:url(img/sphy.png);}
+			#nav-shadow li.chang-four a{background:url(img/kqgl.png) ;}
+			#nav-shadow li.chang-five a{background:url(img/gwcx.png);}
+			#nav-shadow li.chang-six a{background:url(img/gzrl.png);}
+			#nav-shadow li.chang-Seven a{background:url(img/yjkh.png);}
+			#nav-shadow li.chang-eight a{background:url(img/gwqc.png);}
+			#nav-shadow li.chang-nine a{background:url(img/wssw.png);}
+			#nav-shadow li img.shadow{margin:0 auto; position:absolute; bottom:0px; left:0px; z-index:1;}
+		</style>
+		<style type="text/css">
+			#top{
+				position: relative;
+				display:inline;
+				height: 46px;
+				line-height: 46px;
+				width: 1920px;
+				font-size: 18px;
+				font-family: "微软雅黑";
+				color: white;
+				text-align: center;
+
+			}
+			.my-placeholder { color: #aaa; }
+
+			#top form > * {
+				border: 0;
+				margin:0;
+				padding: 0;
+				vertical-align:middle;/*所有元素垂直居中*/
+			}
+			#labelUserName{
+				width: 64px;
+			}
+			#userName {
+				
+			}
+			#userName,#password{
+				width:157px;
+			}
+			#labelpwd{
+				width: 46px;
+			}
+			#labelRememberPasswords{
+				width: 72px;
+			}
+
+			#rememberPasswords{
+				zoom: 1.2;
+
+			}
+			#login {
+				display:inline;
+				position: absolute;
+				left: 46px;
+				width: 750px;
+			}
+
+			#submit {
+				margin:0;
+				padding: 0;
+				border: none;
+				background-color: red;
+				width: 91px;
+				height: 36px;
+				font-size: 18px;
+				font-family: "微软雅黑";
+				color:white;
+			}
+			#userName ,#password ,#rememberPasswords {
+				height: 28px;
+				line-height:28px;
+				
+			}
+
+			
+			#top-right{
+				float:right;
+				display:inline;
+				margin-right:17px;
+				
+				line-height:46px;
+				height: 46px;
+			}
+			#top-right *{
+				vertical-align:middle;
+			}
+			#top-right img{
+				top:10px;
+			}
+			#todoLable{
+				color: red;
+				font-weight:bold;
+			}
+
+			#top :after{
+				clear: both;
+			}
+			#side_bar{
+				position: absolute;
+				width: 20%;
+				height: 1034px;
+				top: 45px;
+				right: 0;
+				background-color: rgba(0,0,0,0.8);
+				display: none;
+				z-index: 300;
+				color:#fff;
+				font-family: "微软雅黑";
+			}
+		</style>
+	<!--[if lt IE 9]>
+		<style>
+		/*img { width: 100%; }*/
+		img { -ms-interpolation-mode: bicubic; }
+		#side_bar{
+	    	background-color:#010101;
+	    	filter:Alpha(opacity=80);
+    	}
+    	</style>
+	<![endif]-->
+</head>
+
+<body>
+
+	<div id="wide-wrapper">
+		<div id="top">
+		<style type="text/css">
+			#login_button,#logout_button,#l_submit{
+				margin:0;
+				padding: 0;
+				border: none;
+				background-color: red;
+				width: 91px;
+				height: 36px;
+				font-size: 18px;
+				font-family: "微软雅黑";
+				color:white;
+				cursor:pointer;
+			}
+			#logout_button{
+				display: none;
+			}
+		</style>
+		<span id="login">
+		<label for="login_button"> 欢迎您来到“融合桌面”，请</label>&nbsp;&nbsp;<input type="button" id="login_button" value="登录" /></span>
+		<!--
+			<form  id="login" action="#" method="post" onsubmit="return checkUser();" >
+				<label for="userName" id="labelUserName">用户名 :</label>
+				<input type="text" id="userName" tabindex="1" required="true" placeholder="请输入用户名"/>
+				<label for="password" id="labelpwd">密码 :</label>
+				<input type="password" id="password" tabindex="2" required="true" placeholder="请输入密码" />
+				<input type="checkbox" id="rememberPasswords" tabindex="3" />
+				<label for="rememberPasswords" id="labelRememberPasswords">记住密码</label>
+				<input type="submit" id="submit" value="登录" tabindex="4" />
+			</form>
+		-->
+			<div id="top-right">
+				<img src="img/gr_dd.png" id="personal_setting">
+				<label for="personal_setting" id="perLabel">个人设置</label>
+				<img src="img/ff_j.png" id="todoList">
+				<label for="todoList" id="todoLable">(52)</label>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input input type="button" id="logout_button" value="注销" />
+			</div>
+			
+		</div>
+		<div id="side_bar">
+			<style type="text/css">
+				#title_bar{
+					width:100%;
+					height:60px;
+					font-size:2em;
+					color:#fff;
+					/*text-align: center;*/
+					vertical-align:middle;
+					font-family: "微软雅黑";
+					background-color:#3c3636;
+					position: relative;
+				}
+				#title_bar strong{ position: absolute; top:15px;left:14%;}
+				#todo,#meeting,#exercise,#schedule{
+					width:100%;
+					height:50px;
+					font-size:2em;
+					background-color:#010101; 
+				}
+				#todo span{
+					float: bottom;
+				}
+				#todo_li span,#meeting_li span,#exercise_li span,#schedule_li span{
+					margin: 0;
+					padding: 0;
+					display: block;
+					background-color:#3c3636;
+				}
+				#todo_li span:hover,#meeting_li span:hover,#exercise_li span:hover,#schedule_li span:hover{
+					font-size: 23px;
+					background-color:#645759;
+				}
+				#todo_li,#meeting_li,#exercise_li,#schedule_li{
+					display: none;
+				}
+			</style>
+				<div id="title_bar"><strong>&nbsp;今日提醒&nbsp;&nbsp;|&nbsp;通知</strong></div>
+				<div id="todo"><span>&nbsp;&nbsp;&nbsp;&nbsp;待办(52)</span></div>
+				<div id="todo_li">
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-07-01</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-06-30</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-06-29</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-06-28</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-06-27</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-06-26</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-06-25</span>
+				</div>
+				<div id="meeting"><span>&nbsp;&nbsp;&nbsp;&nbsp;会议类(15)</span></div>
+				<div id="meeting_li">
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-07-01</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-06-30</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-06-29</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-06-28</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-06-27</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-06-26</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-06-25</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-07-08</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-07-07</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-07-06</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-07-05</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-07-01</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-06-30</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-06-29</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-06-28</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-06-27</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-06-26</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-06-25</span>
+				</div>
+				<div id="exercise"><span>&nbsp;&nbsp;&nbsp;&nbsp;培训类(10)</span></div>
+				<div id="exercise_li">
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-07-08</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-07-07</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-07-06</span>
+				</div>
+				<div id="schedule"><span>&nbsp;&nbsp;&nbsp;&nbsp;日程类(10)</span></div>
+				<div id="schedule_li">
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-07-08</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-07-07</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;关于请求对案件平&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2015-07-06</span>
+				
+				</div>
+		</div>
+<!--弹出登录框begin-->
+	<style type="text/css">
+		/* box */
+		.box{position:absolute;width:600px;left:50%;height:400px;z-index:100;/*background-color:#fff;border:1px #ddd solid;padding:1px;*/}
+		/*.box h2{height:25px;font-size:14px;background-color:#aaa;position:relative;padding-left:10px;line-height:25px;color:#fff;}
+		.box h2 a{position:absolute;right:5px;font-size:12px;color:#fff;}
+		.box .list{padding:10px;}
+		.box .list li{height:24px;line-height:24px;display: block;}
+		.box .list li span{margin:0 5px 0 0;font-family:"宋体";font-size:12px;font-weight:400;color:#ddd;}*/
+		#box_wrapper{
+			width: 100%;
+			height: 100%;
+			background-color:#009999; 
+			border:3px outset gray;
+			color: white;
+			position: relative;
+		}
+		#box_wrapper h2,#box_wrapper span{
+			margin: 10px;padding: 0;
+			font-size: 30px;
+			color:white;
+		}
+		#box_wrapper h2{
+			float: left;
+		}
+		#box_wrapper span{
+			float: right;
+		}
+		#box_wrapper span:after{
+			clear:both;
+		}
+		#box_wrapper form{
+			position: absolute;
+			top: 20%;
+			left: 10%;
+			right: 10%;
+			bottom: 10%;
+			background-color:red; 
+			font:bold 24px '微软雅黑';
+		}
+		#box_wrapper form>*{
+			text-align: center;
+			vertical-align:middle;
+		}
+		#row1,#row2{width: 100%;height: 20%;border: 1px;background-color: gray;padding-top:10%; }
+		#row3{width: 100%;height: 25%;border: 1px;background-color: gray;padding-top:5%; position: relative;}
+		#_rememberPasswords{float: left;margin-top: 0;margin-right: 5px;margin-left: 30px;zoom: 250%;}
+		#_userName ,#_password ,#_rememberPasswords {height: 28px;line-height:28px;}
+		#_labelRememberPasswords{float: left;margin-top: 16px;}
+		#l_submit{margin-top:15px;}
+		.showbtn {font:bold 24px '微软雅黑';}
+		#bg{background-color:#666;position:absolute;z-index:99;left:0;top:0;display:none;width:100%;height:100%;opacity:0.5;filter: alpha(opacity=50);-moz-opacity: 0.5;}
+		#_close:hover{cursor:pointer;}
+	</style>
+		<div id="bg"></div>
+		<div class="box" style="display:none">
+			<div id="box_wrapper">
+				<h2>登录</h2><span id="_close">关闭</span>
+			<form  id="_login" action="#" method="post" onsubmit="return checkUser();" >
+				<div id="row1">
+					<label for="_userName" id="_labelUserName">用户名 :</label>
+					<input type="text" id="_userName" tabindex="1" required="true" placeholder="请输入用户名"/>
+				</div>
+				<div id="row2">
+					<label for="password" id="_labelpwd">密&nbsp;&nbsp;&nbsp;码 :</label>
+					<input type="password" id="_password" tabindex="2" required="true" placeholder="请输入密码" />
+				</div>
+				<div id="row3">
+					<input type="checkbox" id="_rememberPasswords" tabindex="3" size="40" />
+					
+					<label for="rememberPasswords" id="_labelRememberPasswords">记住密码</label>
+					<input type="submit" id="l_submit" value="登录" tabindex="4" />
+				</div>
+			</form>				
+			</div>
+
+		    <!--<h2>登录<a href="#" class="close">关闭</a></h2>
+		    <div class="list">
+		        <ul>
+		            <li>我是稀饭</li>
+		            <li>我是稀饭</li>
+		            <li>我是稀饭</li>
+		        </ul>
+		    </div>-->
+		</div>
+		
+<!--弹出登录框end-->
+		<div id="middle">
+			<div id="carouselBack">
+				<ul id="carousel">
+					<li>
+						<img src="img/a.png" alt=""/>
+						
+					</li>
+					<li>
+						<img src="img/2b.png" alt=""/>
+					</li>
+					<li>
+						<img src="img/3c.png" alt=""/>                   
+					</li>
+					<li>
+						<img src="img/4d.png" alt=""/>
+						
+					</li>
+					<li>
+						<img src="img/5e.png" alt=""/>
+					</li>
+					<li>
+						<img src="img/6f.png" alt=""/>
+					</li>
+					<li>
+						<img src="img/7f.png" alt=""/>
+						
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div id="bottom">
+			<img id="bottom-img" src="img/tmbl.png">
+				 <div id="content">
+				 	<ul id="nav-shadow">
+				 		<li class="chang-one"><a href="#" title="reflaction_one">click me</a></li>
+						<li class="chang-two"><a href="#" title="reflaction_two">click me</a></li>
+						<li class="chang-three"><a href="#" title="reflaction_three">click me</a></li>
+						<li class="chang-four"><a href="#" title="reflaction_four">click me</a></li>
+						<li class="chang-five"><a href="#" title="reflaction_five">click me</a></li>
+						<li class="chang-six"><a href="#" title="reflaction_six">click me</a></li>
+						<li class="chang-Seven"><a href="#" title="reflaction_Seven">click me</a></li>
+						<li class="chang-eight"><a href="#" title="reflaction_eight">click me</a></li>	
+						<li class="chang-nine"><a href="#" title="reflaction_nine">click me</a></li>
+				 	</ul>
+				 </div>
+		</div>
+    </div>
+</body>
+
+</html>
