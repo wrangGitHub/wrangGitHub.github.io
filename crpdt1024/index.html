@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>融合桌面</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" alt="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <!-- <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script> -->
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <!--   <script type="text/javascript" src="js/jquery.carousel.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel.js"></script> -->
+    <script type="text/javascript">
+    $(document).ready(function($) {
+        // $('body').width($(document).width() < $('body').width() ? $(document).width() : $('body').width());
+        // $('body').height($(document).height() < $('body').height() ? $(document).height() : $('body').height());
+        // console.log("窗口高：" + $(document).height());
+        // console.log("窗口宽：" + $(document).width());
+        // $(window).resize(function(event) {
+        //     /* Act on the event */
+        //     console.log("窗口高：" + $(document).height());
+        //     console.log("窗口宽：" + $(document).width());
+        // });
+        // $('#carousel').carousel({
+        //     width: 1024,
+        //     height: 350,
+        //     itemWidth: 40,
+        //     horizontalRadius: 400, //半径
+        //     verticalRadius: 150,
+        //     resize: false,
+        //     mouseScroll: false,
+        //     mouseDrag: true,
+        //     scaleRatio: 0.4,
+        //     scrollbar: true,
+        //     mouseWheel: true,
+        //     mouseWheelReverse: true,
+        //     speed: 50000
+        // });
+        $('#icon_ul').sortable();
+        $('.icon-ul-li').hover(function() {
+            var $e = this;
+            $($e).find('img').stop().animate({
+                marginTop: '-14px'
+            }, 250, function() {
+                $($e).find('li').animate({
+                    marginTop: '-10px'
+                }, 250);
+            });
+        }, function() {
+            var $e = this;
+            $($e).find('img').stop().animate({
+                marginTop: "4px"
+            }, 250, function() {
+                $($e).find('img').animate({
+                    marginTop: "0px"
+                }, 250);
+            });
+        });
+
+    });
+    </script>
+    <style type="text/css"></style>
+    <!--[if lt IE 9]>
+        <style>
+        /*img { width: 100%; }*/
+        img { -ms-interpolation-mode: bicubic; }
+        #sidebar{
+            background-color:#010101;
+            filter:Alpha(opacity=80);
+        }
+        </style>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="wrapper_img">
+        <!--顶部区域-->
+        <div id="header">
+            <!--                 <div id="header_right">
+                    <img src="img/gr_dd.png" id="personal_setting">
+                    <label for="personal_setting" id="perLabel">个人设置</label>
+                    <img src="img/ff_j.png" id="todoList">
+                    <label for="todoList" id="todoLable">(52)</label>
+                </div> -->
+            <div id="header_right">
+                <ul>
+                    <li id="personal_setting">
+                        <img src="img/gr_dd.png">
+                        <span>个人设置</span>
+                    </li>
+                    <li id="todoList">
+                        <img src="img/ff_j.png">
+                        <span id="todo_number">(52)</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="wrapper">
+            <!--侧边栏-->
+            <div id="sidebar"></div>
+            <!-- 中间内容区 -->
+            <div id="middle">
+                <div id="carouselBack">
+                    <!--<ul id="carousel">
+                        <li>
+                            <img src="img/a.png" alt="" />
+                        </li>
+                        <li>
+                            <img src="img/2b.png" alt="" />
+                        </li>
+                        <li>
+                            <img src="img/3c.png" alt="" />
+                        </li>
+                        <li>
+                            <img src="img/4d.png" alt="" />
+                        </li>
+                        <li>
+                            <img src="img/5e.png" alt="" />
+                        </li>
+                        <li>
+                            <img src="img/6f.png" alt="" />
+                        </li>
+                        <li>
+                            <img src="img/7f.png" alt="" />
+                        </li>
+                    </ul> -->
+                </div>
+            </div>
+            <!--底部区域-->
+            <div id="footer">
+                <img src="img/tmbl.png" id="tmbl">
+                <div id="icon_list_wrapper">
+                    <ul id="icon_ul">
+                        <li class="icon-ul-li"><img src="img/txl.png" title="通讯录"></li>
+                        <li class="icon-ul-li"><img src="img/wsbp.png" title="文书报批"></li>
+                        <li class="icon-ul-li"><img src="img/sphy.png" title="视频会议"></li>
+                        <li class="icon-ul-li"><img src="img/kqgl.png" title="考勤管理"></li>
+                        <li class="icon-ul-li"><img src="img/gwcx.png" title="公文查询"></li>
+                        <li class="icon-ul-li"><img src="img/gzrl.png" title="工作日历"></li>
+                        <li class="icon-ul-li"><img src="img/yjkh.png" title="业绩考核"></li>
+                        <li class="icon-ul-li"><img src="img/gwqc.png" title="公文起草"></li>
+                        <li class="icon-ul-li"><img src="img/wssw.png" title="文书上网"></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+</body>
+<script type="text/javascript">
+function bottom_img() {
+
+}
+</script>
+
+</html>
